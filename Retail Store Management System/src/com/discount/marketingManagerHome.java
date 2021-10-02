@@ -259,6 +259,14 @@ public class marketingManagerHome extends JFrame {
 		img_removeDiscounts.setIcon(resize(new ImageIcon(this.getClass().getResource("/img_removeDiscounts.png")),addDiscountImg.getWidth(), addDiscountImg.getHeight()));
 		
 		JButton btn_DiscountReport = new JButton("Generate Report");
+		btn_DiscountReport.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dateReport dr = new dateReport();
+				dr.setVisible(true);
+				dr.setResizable(false);
+				dr.setLocationRelativeTo(null);
+			}
+		});
 		btn_DiscountReport.setForeground(Color.WHITE);
 		btn_DiscountReport.setBorderPainted(false);
 		btn_DiscountReport.setFont(new Font("Yu Gothic UI", Font.BOLD, 19));

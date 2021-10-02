@@ -207,6 +207,14 @@ public class ViewDiscounts extends JFrame {
 		label_discountID.setBounds(10, 496, 113, 42);
 		contentPane.add(label_discountID);
 
+		
+		JLabel lbl_ItemCodeValidate = new JLabel("");
+		lbl_ItemCodeValidate.setForeground(Color.RED);
+		lbl_ItemCodeValidate.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+		lbl_ItemCodeValidate.setBounds(133, 484, 230, 18);
+		contentPane.add(lbl_ItemCodeValidate);
+		
+		
 		txtDiscountID = new JTextField();
 		txtDiscountID.addKeyListener(new KeyAdapter() {
 			@Override
@@ -214,10 +222,12 @@ public class ViewDiscounts extends JFrame {
 				char c = e.getKeyChar();
 				if (Character.isDigit(c) || c == KeyEvent.VK_BACK_SPACE) {
 					txtDiscountID.setEditable(true);
+					lbl_ItemCodeValidate.setText("");
 
 				} else {
 
 					txtDiscountID.setEditable(false);
+					lbl_ItemCodeValidate.setText("Discount ID is a Number");
 				}
 			}
 		});
@@ -428,7 +438,7 @@ public class ViewDiscounts extends JFrame {
 					double discount = Double.parseDouble(txtDiscountAmount.getText());
 
 					Calendar cal = Calendar.getInstance();
-					SimpleDateFormat dateOnly = new SimpleDateFormat("MM/dd/yyyy");
+					SimpleDateFormat dateOnly = new SimpleDateFormat("yyyy-MM-dd");
 
 					String date = dateOnly.format(cal.getTime());
 

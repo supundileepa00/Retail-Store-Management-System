@@ -283,7 +283,7 @@ public class addDiscount extends JFrame {
 
 					// Get Current Date
 					Calendar cal = Calendar.getInstance();
-					SimpleDateFormat dateOnly = new SimpleDateFormat("dd/MM/yyyy");
+					SimpleDateFormat dateOnly = new SimpleDateFormat("yyyy-MM-dd");
 
 					String itemCode = txt_ItemCode.getText();
 					String discountName = txt_DiscountName.getText();
