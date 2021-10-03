@@ -8,6 +8,14 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import net.proteanit.sql.DbUtils;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -149,6 +157,29 @@ public class expenses_report extends JFrame {
 		scrollPane.setViewportView(table);
 		
 		JButton btnNewButton_1_2 = new JButton("Export Report");
+		btnNewButton_1_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Class.forName("com.mysql.jdbc.Driver");
+					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/expenses","root","");
+					String sql = "select * from expensesf";
+					
+					JasperDesign jdesign = JRXmlLoader.load("D:\\itp\\git rea\\ITP2021_S2_B01_G06\\Retail Store Management System\\src\\test_4\\expenses report.jrxml");
+					JRDesignQuery updateQuary = new JRDesignQuery();
+					updateQuary.setText(sql);
+					
+					jdesign.setQuery(updateQuary);
+					
+					JasperReport Jreport = JasperCompileManager.compileReport(jdesign);
+					JasperPrint Jasperprint = JasperFillManager.fillReport(Jreport, null,con);
+					
+					JasperViewer.viewReport(Jasperprint,false);
+					
+					
+						
+				}catch(Exception e1) {System.out.print(e1);}
+			}
+		});
 		btnNewButton_1_2.setBackground(new Color(153, 153, 102));
 		btnNewButton_1_2.setForeground(new Color(255, 255, 255));
 		btnNewButton_1_2.setFont(new Font("Tahoma", Font.BOLD, 18));
