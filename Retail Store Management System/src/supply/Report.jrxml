@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bdf998ae-87b0-4654-b68c-dfb8b7d6346e">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM supply]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supply"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="sname"/>
+		<property name="com.jaspersoft.studio.field.label" value="sname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supply"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="shid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="shid"/>
+		<property name="com.jaspersoft.studio.field.label" value="shid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supply"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="pid"/>
+		<property name="com.jaspersoft.studio.field.label" value="pid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supply"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="pname"/>
+		<property name="com.jaspersoft.studio.field.label" value="pname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supply"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="quntity" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="quntity"/>
+		<property name="com.jaspersoft.studio.field.label" value="quntity"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supply"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement x="190" y="10" width="170" height="51" uuid="74564d9f-9b92-4477-a78a-d3871f026883"/>
+				<textElement>
+					<font size="20" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Supply Details]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-23" y="60" width="598" height="1" uuid="2a53a4c0-098f-4091-a4e9-f60902999250"/>
+			</line>
+			<image>
+				<reportElement x="10" y="0" width="81" height="51" uuid="18cce38d-2a56-4829-b892-8db7c3ff7042"/>
+				<imageExpression><![CDATA["/images/logo3.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="8" width="101" height="21" uuid="ece68431-5197-4307-83c7-0db0167c3d5d"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Supplier name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="10" width="101" height="21" uuid="75e84c2c-8f9b-4a71-a334-0e4febac8993"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Shipping ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="10" width="101" height="21" uuid="ae6a9613-dab2-4148-9193-39654f87e257"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Product ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="10" width="101" height="21" uuid="a65af4a5-95fe-4b67-b1b8-39d17d706fad"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Praduct name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="10" width="101" height="21" uuid="d95431ab-254e-44e5-8180-e9f638df47cc"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Product quantity]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="10" width="101" height="21" uuid="f5474196-942e-4240-bee1-d07095c4dd70"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{sname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="10" width="101" height="21" uuid="f374b6df-2d75-4803-bd3b-ead0c017e671"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{shid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="10" width="101" height="21" uuid="aff4b7af-1cc4-451c-a6d9-bee3b2d09037"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{pid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="10" width="101" height="21" uuid="c131804b-d6d2-4617-9c9f-b443fcdbe3c1"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{pname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="10" width="101" height="21" uuid="0237d35d-cca7-4cd4-bbfc-937ecf942af1"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quntity}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="144" splitType="Stretch">
+			<line>
+				<reportElement x="-20" y="0" width="600" height="1" uuid="00e41567-405e-4af6-a119-b65bebdc77f7"/>
+			</line>
+			<staticText>
+				<reportElement x="-10" y="90" width="150" height="20" uuid="729382e0-ec5d-4dbc-b71d-7582efefbcd8"/>
+				<text><![CDATA[..............................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-8" y="30" width="571" height="51" uuid="7f80236b-cfaa-44ff-a078-54f50c879962"/>
+				<text><![CDATA[I hereby confirm that all details that provided in thi report is true and details in this report only should be published within the organizaton.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-11" y="120" width="101" height="21" uuid="2caa80f2-07ed-413d-a0c7-37860622bef6"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="90" width="150" height="20" uuid="94254eae-3c04-4a33-90c5-ee7e232e3ac5"/>
+				<text><![CDATA[..............................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="120" width="150" height="21" uuid="f25d4639-b113-4497-be67-053b28559454"/>
+				<text><![CDATA[Signature(Supply manager)]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
