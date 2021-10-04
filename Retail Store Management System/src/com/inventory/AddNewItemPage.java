@@ -236,12 +236,18 @@ public class AddNewItemPage extends JFrame {
 		btn_AddItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
+				// Check text fields are empty
+				if (input_ItemName.getText().equals("") || input_StockedDate.equals("") || input_Quantity.getText().equals("") || input_BuyingPrice.getText().equals("")
+						|| input_SellingPrice.getText().equals("")) {
+					JOptionPane.showMessageDialog(null, "Please Fill all fields!!");
+
+				} else {
 				// declare item variables
 				String name;
 				String quantity;
 				String bPrice;
 				String sPrice;
-				SimpleDateFormat dateOnly = new SimpleDateFormat("dd/MM/yyyy");
+				SimpleDateFormat dateOnly = new SimpleDateFormat("yyyy-MM-dd");
 				
 				// Date selectedDate = (Date) datePicker.getModel().getValue();
 
@@ -255,12 +261,7 @@ public class AddNewItemPage extends JFrame {
 				//method for calculate paid amount
 				Double paidAmount = Double.parseDouble(bPrice)*Double.parseDouble(quantity);
 				
-				// Check text fields are empty
-				if (name.equals("") || date.equals("") || quantity.equals("") || bPrice.equals("")
-						|| sPrice.equals("")) {
-					JOptionPane.showMessageDialog(null, "Please Fill all fields!!");
-
-				} else {
+				
 					// insert data into item table
 					try {
 						dbConnect connect = new dbConnect();

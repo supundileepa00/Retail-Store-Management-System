@@ -228,7 +228,7 @@ public class UpdateItemPage extends JFrame {
 					String quantity;
 					String bPrice;
 					String sPrice;
-					SimpleDateFormat dateOnly = new SimpleDateFormat("dd/MM/yyyy");
+					SimpleDateFormat dateOnly = new SimpleDateFormat("yyyy-MM-dd");
 					String bId;
 					
 					// Date selectedDate = (Date) datePicker.getModel().getValue();

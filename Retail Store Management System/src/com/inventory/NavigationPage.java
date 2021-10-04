@@ -6,6 +6,9 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.*;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -13,6 +16,17 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+//import com.sun.jdi.connect.spi.Connection;
+
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 //import com.main.HomePage;
 
@@ -149,6 +163,12 @@ public class NavigationPage extends JFrame {
 		btn_generaateReport.setBackground(new Color (100, 95, 110));
 		btn_generaateReport.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				dispose();
+				DateJasper report = new DateJasper();
+				report.setVisible(true);
+				report.setResizable(false);
+				report.setLocationRelativeTo(null);
 			}
 		});
 		btn_generaateReport.setBounds(689, 467, 148, 49);
